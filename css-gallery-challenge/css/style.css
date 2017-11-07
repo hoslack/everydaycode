@@ -1,0 +1,85 @@
+
+/*Answer for part one*/
+.photo{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/*Part two*/
+@media only screen and (min-width: 600px) {
+    
+    .gallery{
+        display: block;
+        font-size: 0;
+        margin: auto;
+    }
+    
+    
+    .gallery>.photo{
+          display: inline-block;
+          max-width: 50%;}
+    
+    
+    
+    }
+
+@media only screen and (max-width: 600px) {
+          .gallery>.photo{
+         width: 100%;
+         margin: 0 auto;
+         
+        }	 
+    
+    
+    }
+
+
+/*Part three*/
+
+@media only screen and (min-width: 601px) {
+    
+    .quarters{
+        font-size: 0;
+        display: block;
+        margin: auto;
+    }
+    
+    .quarters>.photo{
+          position: relative;
+          display: inline-block;
+          max-width: 25%;
+         
+        }	 
+    
+    
+    }
+
+@media only screen and (max-width: 600px) {
+          .quarters>.photo{
+         width: 100%;
+         margin: 0 auto;
+         
+        }	 
+    
+    
+    }
+
+
+
+/*Part four*/
+
+
+@media only screen and (min-width: 600px) {
+          .gallery>.tripled{
+          font-size: 0; 
+          display: inline-block;
+          max-width: 24%;
+         
+        }	 
+    
+    
+    }
+
+
+ 
