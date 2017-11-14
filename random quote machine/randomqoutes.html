@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		
+		body{background-color: #5CDB95; 
+			text-align: center; 
+			padding-top: 100px;}
+
+
+			.header{
+				margin-bottom: 50px;
+				color: #05386B;
+
+			}
+
+			.quote{
+
+				height:auto; 
+				min-height: 100px;
+				width:800px; 
+				margin:0 auto; 
+				background-color: #05386B;
+				text-align: center; 
+				color: white;
+				position: center;
+				border-radius: 5%;
+				padding: 20px;
+				font-size: 25px;
+
+			}
+
+			
+
+			.btn{
+
+				width: 150px;
+				height: 40px;
+				margin-top: 100px;
+				background-color: #05386B;
+				color: white;
+				text-transform: bold;
+
+			}
+
+
+
+
+
+	</style>
+
+
+</head>
+<body>
+
+	<h1 class="header">
+		My Random Qoute Machine
+	</h1>
+
+<div id="quot"  class="quote">
+	
+	
+</div>
+
+<input class="btn" type="button" name="mybutton" value="Get New Qoute" onclick="randomQuotes()">
+
+
+<div class="mypanel"></div>
+
+    <script>
+
+function randomQuotes(){
+
+var url = "https://talaikis.com/api/quotes/random/";
+var xhr = new XMLHttpRequest();
+
+		xhr.onreadystatechange = function() {
+		    if (this.readyState == 4 && this.status == 200) {
+		       
+		       var quoteObj = JSON.parse(xhr.responseText);
+		       var quotEl = document.querySelector("#quot");
+			   var text = quoteObj.quote;
+			   var author = quoteObj.author;
+
+			   quotEl.textContent = text + "    --" + author;
+			}
+		    
+		};
+
+xhr.open("GET", url, true);
+xhr.send();
+
+
+}
+
+document.onload = randomQuotes();
+
+    </script>
+
+</body>
+
+
+</html>
